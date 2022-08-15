@@ -147,13 +147,10 @@ public class BasePageTemplate extends DriverManager {
                         log.info("looking for visibility of element located by: " + locator.toString());
                         WebElement element = driver.findElement(locator);
                         try {
-                            if (element == null
-                                    || !element.isDisplayed()
-                                    || element.getSize().getWidth() <= 0
-                                    || element.getSize().getHeight() <= 0) {
-                                return false;
-                            }
-                            return true;
+                            return element != null
+                                    && element.isDisplayed()
+                                    && element.getSize().getWidth() > 0
+                                    && element.getSize().getHeight() > 0;
                         } catch (WebDriverException e) {
                             return null;
                         }
