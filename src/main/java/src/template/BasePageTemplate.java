@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import src.driverManager.DriverManager;
+import src.dataProdiver.DriverManager;
 
 import java.time.Duration;
 

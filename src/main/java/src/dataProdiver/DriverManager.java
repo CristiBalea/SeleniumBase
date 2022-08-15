@@ -1,35 +1,35 @@
-package src.driverManager;
+package src.dataProdiver;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import src.dataProdiver.ConfigurationProperties;
-import src.dataProdiver.DriverType;
-import src.dataProdiver.EnvironmentType;
 
 import java.net.URL;
 
+@Log4j2
 public class DriverManager {
 
     private static WebDriver driver;
     private static DriverType driverType;
+    private static EnvironmentType environmentType;
 
     public WebDriver initDriver() throws Exception {
         driverType = ConfigurationProperties.getDriverType();
+        environmentType = ConfigurationProperties.getEnvironment();
+        log.info("Running " + driverType.toString() + " " + environmentType.toString());
+
         return createDriver();
     }
 
     private static WebDriver createDriver() throws Exception {
-        EnvironmentType environmentType = ConfigurationProperties.getEnvironment();
         if (environmentType == EnvironmentType.LOCAL) {
             driver = createLocalDriver();
-        }
-
-        if (environmentType == EnvironmentType.REMOTE) {
-        driver = createRemoteDriver();
+        } else if (environmentType == EnvironmentType.REMOTE) {
+            driver = createRemoteDriver();
         }
 
         return driver;
@@ -39,9 +39,7 @@ public class DriverManager {
         if (driverType == DriverType.FIREFOX) {
             FirefoxOptions options = new FirefoxOptions();
             driver = new RemoteWebDriver(new URL(ConfigurationProperties.getRemoteUrl()), options);
-        }
-
-        if (driverType == DriverType.CHROME) {
+        } else if (driverType == DriverType.CHROME) {
             ChromeOptions options = new ChromeOptions();
             driver = new RemoteWebDriver(new URL(ConfigurationProperties.getRemoteUrl()), options);
         }

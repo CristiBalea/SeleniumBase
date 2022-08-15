@@ -14,6 +14,7 @@ public class PlayTest extends BaseTestTemplate {
         driver = initiateDriver();
 
         String url = ConfigurationProperties.getTestUrl();
+
         driver.get(url);
     }
 

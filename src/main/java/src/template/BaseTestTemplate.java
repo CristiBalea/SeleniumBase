@@ -2,7 +2,7 @@ package src.template;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
-import src.driverManager.DriverManager;
+import src.dataProdiver.DriverManager;
 
 
 public class BaseTestTemplate  {
