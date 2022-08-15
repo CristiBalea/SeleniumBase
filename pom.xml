@@ -13,11 +13,11 @@
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
         <lombok.version>1.18.24</lombok.version>
-        <log4j-slf4j.version>2.17.2</log4j-slf4j.version>
-        <log4j-core.version>2.17.2</log4j-core.version>
+        <log4j-slf4j.version>2.18.0</log4j-slf4j.version>
+        <log4j-core.version>2.18.0</log4j-core.version>
         <allure-testng.version>2.18.1</allure-testng.version>
-        <testng.version>7.6</testng.version>
-        <selenium.version>4.2.1</selenium.version>
+        <testng.version>7.6.1</testng.version>
+        <selenium.version>4.3.0</selenium.version>
     </properties>
 
     <!-- Dependencies -->
@@ -59,12 +59,6 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.6.0</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
