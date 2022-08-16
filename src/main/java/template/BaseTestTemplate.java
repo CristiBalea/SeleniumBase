@@ -8,19 +8,19 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseTestTemplate  {
 
-    protected WebDriver driver;
+    public WebDriver driver;
 
     @BeforeTest(alwaysRun = true)
-    protected void initiateDriver() throws Exception {
+    public void initiateDriver() throws Exception {
         driver = new DriverManager().initDriver();
     }
 
     @AfterTest(alwaysRun = true)
-    protected void close() {
+    public void close() {
         driver.quit();
     }
 
-    protected WebDriver getDriver() {
+    public WebDriver getDriver() {
         return driver;
     }
 

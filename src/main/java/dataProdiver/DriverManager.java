@@ -41,6 +41,7 @@ public class DriverManager {
             driver = new RemoteWebDriver(new URL(ConfigurationProperties.getRemoteUrl()), options);
         } else if (driverType == DriverType.CHROME) {
             ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
             driver = new RemoteWebDriver(new URL(ConfigurationProperties.getRemoteUrl()), options);
         }
 
@@ -57,6 +58,7 @@ public class DriverManager {
         if (driverType == DriverType.CHROME) {
             System.setProperty("webdriver.chrome.driver", ConfigurationProperties.readProperty("chromeDriverPath"));
             ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
             driver = new ChromeDriver(options);
         }
 

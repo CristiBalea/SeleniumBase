@@ -6,10 +6,13 @@
 
     <groupId>org.example</groupId>
     <artifactId>SeleniumBase</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <!-- Properties -->
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
         <lombok.version>1.18.24</lombok.version>
@@ -70,9 +73,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin-version}</version>
                 <configuration>
-                    <source>11</source> <!--For JAVA 8 use 1.8-->
-                    <target>11</target> <!--For JAVA 8 use 1.8-->
+                    <source>18</source> <!--For JAVA 8 use 1.8-->
+                    <target>18</target> <!--For JAVA 8 use 1.8-->
                 </configuration>
             </plugin>
             <plugin>

@@ -20,12 +20,12 @@ public class MainPage extends BasePageTemplate {
         super(driver);
     }
 
-    @Step("Waiting for logo")
+    @Step
     public void waitForHeaderLogo(int seconds) {
         waitForElementClickable(HEADER_LOGO, seconds);
     }
 
-    @Step("Checking if Header logo is visible")
+    @Step
     public boolean isHeaderLogoVisible() {
         return isElementVisible(HEADER_LOGO, 10);
     }
