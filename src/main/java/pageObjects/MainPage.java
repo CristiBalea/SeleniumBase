@@ -1,6 +1,5 @@
 package pageObjects;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import template.BasePageTemplate;
@@ -20,12 +19,10 @@ public class MainPage extends BasePageTemplate {
         super(driver);
     }
 
-    @Step
     public void waitForHeaderLogo(int seconds) {
         waitForElementClickable(HEADER_LOGO, seconds);
     }
 
-    @Step
     public boolean isHeaderLogoVisible() {
         return isElementVisible(HEADER_LOGO, 10);
     }
