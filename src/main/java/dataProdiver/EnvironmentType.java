@@ -1,4 +1,4 @@
-package src.dataProdiver;
+package dataProdiver;
 
 public enum EnvironmentType {
     LOCAL,

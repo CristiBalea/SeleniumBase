@@ -1,4 +1,4 @@
-package src.dataProdiver;
+package dataProdiver;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -1,8 +1,8 @@
-package src.pageObjects.mainPage;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import src.template.BasePageTemplate;
+import template.BasePageTemplate;
 
 public class MainPage extends BasePageTemplate {
 
@@ -14,16 +14,17 @@ public class MainPage extends BasePageTemplate {
     // iframes
     public static By IFRAME_ONE = By.cssSelector("#frame1");
 
+
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
     public void waitForHeaderLogo(int seconds) {
-        waitForElementClickable(INACTIVE_BUTTON, seconds);
+        waitForElementClickable(HEADER_LOGO, seconds);
     }
 
     public boolean isHeaderLogoVisible() {
-        return isElementVisible(VISIBLE_AFTER, 10);
+        return isElementVisible(HEADER_LOGO, 10);
     }
 
     public void switchToIframe() {

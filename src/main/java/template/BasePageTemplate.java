@@ -1,10 +1,10 @@
-package src.template;
+package template;
 
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import src.dataProdiver.DriverManager;
+import dataProdiver.DriverManager;
 
 import java.time.Duration;
 
